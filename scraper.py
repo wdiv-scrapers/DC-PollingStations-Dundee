@@ -1,8 +1,8 @@
 from dc_base_scrapers.geojson_scraper import RandomIdGeoJSONScraper
 
-
-stations_url = "http://inspire.dundeecity.gov.uk/geoserver/inspire/wms?service=WFS&version=1.3.0&request=GetFeature&typeNames=inspire%3ASV_POLLING_STATIONS&outputFormat=json&srsName=EPSG%3A4326&sortBy=OBJECTID"
-districts_url = "http://inspire.dundeecity.gov.uk/geoserver/inspire/wms?service=WFS&version=1.3.0&request=GetFeature&typeNames=inspire%3ASV_POLLING_DISTRICTS&outputFormat=json&srsName=EPSG%3A4326&sortBy=OBJECTID"
+root_url="https://dservices.arcgis.com/GlZ1P6ksdiXNYhvC/arcgis/services/Dundee_Polling_Districts_and_Polling_Stations/WFSServer"
+stations_url = "{root_url}?outputFormat=GEOJSON&request=GetFeature&service=wfs&typename=Polling_Stations".format(root_url=root_url)
+districts_url = "{root_url}?outputFormat=GEOJSON&request=GetFeature&service=wfs&typename=Polling_Districts".format(root_url=root_url)
 council_id = 'DND'
 
 
